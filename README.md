@@ -3,7 +3,6 @@
 - Removed printing every address to terminal (waste of time)
 - Added printing "FOUND ONE!" when an address found, still check plutus.txt for necessary info
 - Prints database size after loading
-- Updated database to Dec 23 2019
 - Included converter (template, rough) to create .pickle files
 
 
@@ -19,6 +18,10 @@
 5- Use csv2pickle.py (python3) to change your part files into binary format and dump to pickle
 # YOU MUST 
 edit csv2pickle.py with the files you want to convert, I didn't make any file enumeration, nor accept any command line arguments. Might do that later, might automate all these steps.. might do a lot of things I have no time for. Please don't remind me every 6 months lol ;)
+
+Also edit plutus.py for the path to your pickle files. I use a different path to my updated database. This git repo still has the original DB from creator, and I have no time to split my db into 25mb files and upload. Recommend just delete the included db and make your own anyway. 
+
+Cheers! 
 
 
 # ------ Original Readme From Isaacdelly ------
