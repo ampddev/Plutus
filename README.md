@@ -1,3 +1,25 @@
+# Ampddev Changes
+
+- Removed printing every address to terminal (waste of time)
+- Added printing "FOUND ONE!" when an address found, still check plutus.txt for necessary info
+- Included converter (template, rough) to create .pickle files
+
+
+# Database creation
+
+1- Run Bitcoin core (bitcoind) until you have entire blockchain downloaded
+2- Use https://github.com/graymauser/btcposbal2csv to generate CSV
+3- Use awk to pull column 1 (addresses only) from the generated CSV above
+    ex:  awk -F, '{print $1}' chainsstate.cav > adressesonly.txt
+4- Optional? Not sure but Plutus stores addresses 4 sets, assuming faster searching? So...
+    ex:  split -d -n l/4 addressesonly.txt addresses.part
+   To split CSV into 4 parts without breaking lines (it will auto-add 00 01 02 03 to above file)
+5- Use csv2pickle.py (python3) to change your part files into binary format and dump to pickle
+# YOU MUST edit csv2pickle.py with the files you want to convert, I didn't make any file enumeration, nor accept any command line arguments. Might do that later, might automate all these steps.. might do a lot of things I have no time for. Please don't remind me every 6 months lol ;)
+
+
+# ------ Original Readme From Isaacdelly ------
+
 # Plutus Bitcoin Brute Forcer
 
 A Bitcoin wallet collider that brute forces random wallet addresses
