@@ -15,7 +15,8 @@
     ex:  split -d -n l/4 addressesonly.txt addresses.part
    To split CSV into 4 parts without breaking lines (it will auto-add 00 01 02 03 to above file)
 5- Use csv2pickle.py (python3) to change your part files into binary format and dump to pickle
-# YOU MUST edit csv2pickle.py with the files you want to convert, I didn't make any file enumeration, nor accept any command line arguments. Might do that later, might automate all these steps.. might do a lot of things I have no time for. Please don't remind me every 6 months lol ;)
+# YOU MUST 
+edit csv2pickle.py with the files you want to convert, I didn't make any file enumeration, nor accept any command line arguments. Might do that later, might automate all these steps.. might do a lot of things I have no time for. Please don't remind me every 6 months lol ;)
 
 
 # ------ Original Readme From Isaacdelly ------
