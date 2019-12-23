@@ -2,6 +2,8 @@
 
 - Removed printing every address to terminal (waste of time)
 - Added printing "FOUND ONE!" when an address found, still check plutus.txt for necessary info
+- Prints database size after loading
+- Updated database to Dec 23 2019
 - Included converter (template, rough) to create .pickle files
 
 
