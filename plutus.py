@@ -9,7 +9,8 @@ import binascii
 import multiprocessing
 from ellipticcurve.privateKey import PrivateKey
 
-DATABASE = r'database/MAR_23_2019/'
+DATABASE = r'database/DB/'
+#DATABASE = r'database/MAR_23_2019/'
 
 def generate_private_key(): 
 	"""
@@ -68,8 +69,8 @@ def process(private_key, public_key, address, database):
 				   'WIF private key: ' + str(private_key_to_WIF(private_key)) + '\n' +
 			      	   'public key: ' + str(public_key) + '\n' +
 			           'address: ' + str(address) + '\n\n')
-	else: 
-		print(str(address))
+	#else: 
+		#print(str(address))
 
 def private_key_to_WIF(private_key):
 	"""
@@ -121,8 +122,10 @@ if __name__ == '__main__':
 	quarter = half // 2
 	for c, p in enumerate(os.listdir(DATABASE)):
 		print('\rreading database: ' + str(c + 1) + '/' + str(count), end = ' ')
+		#with open(DATABASE + p, 'r') as file:
 		with open(DATABASE + p, 'rb') as file:
 			if c < half:
+				#[line.rstrip('\n') for line in file]
 				if c < quarter: database[0] = database[0] | pickle.load(file)
 				else: database[1] = database[1] | pickle.load(file)
 			else:
@@ -131,7 +134,13 @@ if __name__ == '__main__':
 	print('DONE')
 
 	# To verify the database size, remove the # from the line below
-	#print('database size: ' + str(sum(len(i) for i in database))); quit()
+	# Edit: Prints anyway, removed quit
+	print('database size: ' + str(sum(len(i) for i in database)))
+	#for i in database:
+	#	print (i)
+
+	# print number of threads
+	print('Running ' + str(multiprocessing.cpu_count()) + ' threads')
 
 	for cpu in range(multiprocessing.cpu_count()):
 		multiprocessing.Process(target = main, args = (database, )).start()
