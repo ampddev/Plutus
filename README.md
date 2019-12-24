@@ -11,10 +11,10 @@
 - Run Bitcoin core (bitcoind) until you have entire blockchain downloaded
 - Use https://github.com/graymauser/btcposbal2csv to generate CSV
 - Use awk to pull column 1 (addresses only) from the generated CSV above
-    ex:  awk -F, '{print $1}' chainsstate.cav > adressesonly.txt
+    - ex:  awk -F, '{print $1}' chainsstate.cav > adressesonly.txt
 - Optional? Not sure but Plutus stores addresses 4 sets, assuming faster searching? So...
-    ex:  split -d -n l/4 addressesonly.txt addresses.part
-    To split CSV into 4 parts without breaking lines (it will auto-add 00 01 02 03 to above file)
+    - ex:  split -d -n l/4 addressesonly.txt addresses.part
+    - To split CSV into 4 parts without breaking lines (it will auto-add 00 01 02 03 to above file)
 - Use csv2pickle.py (python3) to change your part files into binary format and dump to pickle
 
 # YOU MUST 
