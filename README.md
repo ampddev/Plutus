@@ -14,7 +14,7 @@
     ex:  awk -F, '{print $1}' chainsstate.cav > adressesonly.txt
 4- Optional? Not sure but Plutus stores addresses 4 sets, assuming faster searching? So...
     ex:  split -d -n l/4 addressesonly.txt addresses.part
-   To split CSV into 4 parts without breaking lines (it will auto-add 00 01 02 03 to above file)
+    To split CSV into 4 parts without breaking lines (it will auto-add 00 01 02 03 to above file)
 5- Use csv2pickle.py (python3) to change your part files into binary format and dump to pickle
 
 # YOU MUST 
